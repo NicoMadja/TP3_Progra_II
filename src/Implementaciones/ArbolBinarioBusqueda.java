@@ -1,15 +1,12 @@
 package Implementaciones;
 
-import TDAs.ArbolBinarioBusquedaTDA;
-
-public class ArbolBinarioBusqueda extends ArbolBinarioBusquedaTDA {
+public class ArbolBinarioBusqueda {
     private NodoArbol raiz;
 
     public ArbolBinarioBusqueda() {
         this.raiz = null;
     }
 
-    @Override
     public void insertar(int x) {
         raiz = insertarAux(raiz, x);
     }
@@ -26,7 +23,6 @@ public class ArbolBinarioBusqueda extends ArbolBinarioBusquedaTDA {
         return nodo;
     }
 
-    @Override
     public boolean pertenece(int x) {
         return perteneceAux(raiz, x);
     }
@@ -43,12 +39,10 @@ public class ArbolBinarioBusqueda extends ArbolBinarioBusquedaTDA {
         return perteneceAux(nodo.derecho, x);
     }
 
-    @Override
     public boolean esVacio() {
         return raiz == null;
     }
 
-    @Override
     public int cantidadNodos() {
         return cantidadNodosAux(raiz);
     }
