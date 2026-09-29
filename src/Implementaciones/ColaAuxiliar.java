@@ -35,4 +35,3 @@ public class ColaAuxiliar {
         return frente == null;
     }
 }
-

@@ -7,10 +7,6 @@ public class ArbolBinarioBusqueda {
         this.raiz = null;
     }
 
-    // insertar(a, x) -> Arbol
-    // post: a queda con los mismos elementos que tenia mas x
-    //       (si x ya pertenecia a a, el arbol no se modifica)
-    // COSTO: O(altura del arbol) -- en cada llamada se baja un nivel.
     public void insertar(int x) {
         raiz = insertarAux(raiz, x);
     }
@@ -27,9 +23,6 @@ public class ArbolBinarioBusqueda {
         return nodo;
     }
 
-    // pertenece(a, x) -> boolean
-    // post: devuelve true si y solo si x es uno de los elementos de a
-    // COSTO: O(altura del arbol) -- descarta un subarbol entero en cada paso.
     public boolean pertenece(int x) {
         return perteneceAux(raiz, x);
     }
@@ -46,13 +39,9 @@ public class ArbolBinarioBusqueda {
         return perteneceAux(nodo.derecho, x);
     }
 
-    // esVacio(a) -> boolean
-    // post: devuelve true si y solo si a no tiene elementos
     public boolean esVacio() {
         return raiz == null;
     }
-    // cantidadNodos(a) -> entero
-    // post: devuelve la cantidad de elementos de a
 
     public int cantidadNodos() {
         return cantidadNodosAux(raiz);
@@ -64,8 +53,7 @@ public class ArbolBinarioBusqueda {
         return 1 + cantidadNodosAux(nodo.izquierdo) + cantidadNodosAux(nodo.derecho);
     }
 
-    // inorder: izquierdo, nodo, derecho -> en un ABB da los elementos
-    // en orden creciente.
+    // 3.1
     public void inorder() {
         inorderAux(raiz);
         System.out.println();
@@ -78,7 +66,6 @@ public class ArbolBinarioBusqueda {
         }
     }
 
-    // preorder: nodo, izquierdo, derecho
     public void preorder() {
         preorderAux(raiz);
         System.out.println();
@@ -91,7 +78,6 @@ public class ArbolBinarioBusqueda {
         }
     }
 
-    // postorder: izquierdo, derecho, nodo
     public void postorder() {
         postorderAux(raiz);
         System.out.println();
@@ -104,11 +90,7 @@ public class ArbolBinarioBusqueda {
         }
     }
 
-    // recorridoPorNiveles (BFS): NO es recursivo. Se recorre el arbol
-    // nivel por nivel, de izquierda a derecha, usando una Cola auxiliar
-    // (TDA Cola, implementacion dinamica vista en el TP2): se encola la
-    // raiz y, mientras la cola no este vacia, se desencola un nodo, se lo
-    // procesa y se encolan sus hijos (si existen).
+    // 3.2
     public void recorridoPorNiveles() {
         ColaAuxiliar cola = new ColaAuxiliar();
         if (raiz != null) {
@@ -127,10 +109,8 @@ public class ArbolBinarioBusqueda {
         System.out.println();
     }
 
-    // getRaiz(): expone la raiz para que funciones de utilizacion
-    // externas (Clase 9: altura, contarHojas, sumaNodos, nivelDe, esABB)
-    // puedan recorrer el arbol sin duplicar estado ni romper encapsulamiento
-    // de insertar/pertenece.
+    
+    // Expone la raiz para que funciones de utilizacion externas (altura, contarHojas, sumaNodos, nivelDe, esABB).
     public NodoArbol getRaiz() {
         return raiz;
     }
