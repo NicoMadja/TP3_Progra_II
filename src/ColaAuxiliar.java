@@ -1,5 +1,3 @@
-package Implementaciones;
-
 public class ColaAuxiliar {
     private NodoCola frente;
     private NodoCola fin;

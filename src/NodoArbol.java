@@ -1,5 +1,3 @@
-package Implementaciones;
-
 public class NodoArbol {
     int dato;
     NodoArbol izquierdo;

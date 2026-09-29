@@ -1,5 +1,3 @@
-package Implementaciones;
-
 public class NodoCola {
     NodoArbol dato;
     NodoCola siguiente;

@@ -1,5 +1,3 @@
-import Implementaciones.ArbolBinarioBusqueda;
-
 public class TestRecorridos {
     public static void main(String[] args) {
 

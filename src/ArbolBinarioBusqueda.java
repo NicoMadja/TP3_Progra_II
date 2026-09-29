@@ -1,5 +1,3 @@
-package Implementaciones;
-
 public class ArbolBinarioBusqueda {
     private NodoArbol raiz;
 
@@ -112,7 +110,7 @@ public class ArbolBinarioBusqueda {
     }
 
 
-    // Expone la raiz para que funciones de utilizacion externas (altura, contarHojas, sumaNodos y esABB).
+    // Getter para las funciones de utilizacion (altura, contarHojas, sumaNodos y esABB).
     public NodoArbol getRaiz() {
         return raiz;
     }
