@@ -1,12 +1,15 @@
 package Implementaciones;
 
-public class ArbolBinarioBusqueda {
+import TDAs.ArbolBinarioBusquedaTDA;
+
+public class ArbolBinarioBusqueda extends ArbolBinarioBusquedaTDA {
     private NodoArbol raiz;
 
     public ArbolBinarioBusqueda() {
         this.raiz = null;
     }
 
+    @Override
     public void insertar(int x) {
         raiz = insertarAux(raiz, x);
     }
@@ -23,6 +26,7 @@ public class ArbolBinarioBusqueda {
         return nodo;
     }
 
+    @Override
     public boolean pertenece(int x) {
         return perteneceAux(raiz, x);
     }
@@ -39,10 +43,12 @@ public class ArbolBinarioBusqueda {
         return perteneceAux(nodo.derecho, x);
     }
 
+    @Override
     public boolean esVacio() {
         return raiz == null;
     }
 
+    @Override
     public int cantidadNodos() {
         return cantidadNodosAux(raiz);
     }
@@ -52,6 +58,7 @@ public class ArbolBinarioBusqueda {
         }
         return 1 + cantidadNodosAux(nodo.izquierdo) + cantidadNodosAux(nodo.derecho);
     }
+
 
     // 3.1
     public void inorder() {
@@ -90,6 +97,7 @@ public class ArbolBinarioBusqueda {
         }
     }
 
+
     // 3.2
     public void recorridoPorNiveles() {
         ColaAuxiliar cola = new ColaAuxiliar();
@@ -109,8 +117,8 @@ public class ArbolBinarioBusqueda {
         System.out.println();
     }
 
-    
-    // Expone la raiz para que funciones de utilizacion externas (altura, contarHojas, sumaNodos, nivelDe, esABB).
+
+    // Expone la raiz para que funciones de utilizacion externas (altura, contarHojas, sumaNodos y esABB).
     public NodoArbol getRaiz() {
         return raiz;
     }

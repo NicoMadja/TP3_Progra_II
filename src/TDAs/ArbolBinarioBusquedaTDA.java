@@ -13,10 +13,10 @@ public abstract class ArbolBinarioBusquedaTDA {
     public abstract void insertar(int elemento);
     // post: a queda con los mismos elementos que tenia mas x (si x ya pertenecia a a, el arbol no se modifica).
 
-    public abstract int pertenece(int elemento);
+    public abstract boolean pertenece(int elemento);
     // post: devuelve true si y solo si x es uno de los elementos de a.
 
-    public abstract void eliminar(int elemento);
+    // eliminar(int elemento);
     // pre: x pertenece a a.
     // post: a queda con los mismos elementos, salvo x, que fue eliminado; se preserva la propiedad ABB para el resto.
 
